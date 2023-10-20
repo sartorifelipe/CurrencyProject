@@ -4,6 +4,10 @@ import com.felipe.sartori.WEXinterview.model.ConvertedCurrency;
 import com.felipe.sartori.WEXinterview.model.PurchaseTransaction;
 import com.felipe.sartori.WEXinterview.service.FiscalDataService;
 import com.felipe.sartori.WEXinterview.service.PurchaseTransactionServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/transactions")
+@Tag(name = "wex-interview")
 public class PurchaseTransactionController {
 
     @Autowired
@@ -21,9 +26,15 @@ public class PurchaseTransactionController {
     @Autowired
     FiscalDataService fiscalDataService;
 
+
+    @Operation(summary = "Receive and store a transaction", method ="POST")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Transaction received and created successfully!"),
+            @ApiResponse(responseCode = "400", description = "Transaction not accepted"),
+    })
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     @PostMapping
-    @RequestMapping("/save")
-    public ResponseEntity<PurchaseTransaction> saveTransaction(
+    public ResponseEntity saveTransaction(
             @RequestParam("description") String description,
             @RequestParam("purchaseAmount") Long purchaseAmount
     ) {
@@ -33,38 +44,52 @@ public class PurchaseTransactionController {
                     .transactionDate(LocalDate.now())
                     .purchaseAmount(purchaseAmount)
                     .build());
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
         }
-        return null;
+        return new ResponseEntity<>("Description bigger then 50 Char.", HttpStatus.BAD_REQUEST);
     }
 
+    @Operation(summary = "Retrieve transactions by id", method ="GET")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Transaction retrieved successfully!"),
+            @ApiResponse(responseCode = "404", description = "Id not found"),
+    })
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     @GetMapping
-    @RequestMapping("/get")
     public ResponseEntity getTransactionById(
             @RequestParam("id") Long id
     ) throws Exception {
         try {
             PurchaseTransaction response = purchaseTransactionService.getTransactionById(id);
             return new ResponseEntity<>(response, HttpStatus.OK);
-        }catch(Exception e){
+        } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 
+    @Operation(summary = "Retrieve all transactions", method ="GET")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Transactions retrieved successfully!"),
+            @ApiResponse(responseCode = "404", description = "No transaction found"),
+    })
+    @RequestMapping(value = "/getall", method = RequestMethod.GET)
     @GetMapping
-    @RequestMapping("/getall")
     public ResponseEntity getAll(
     ) {
-        try{
-        List<PurchaseTransaction> list = purchaseTransactionService.listAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
-        }catch (Exception e){
+        try {
+            List<PurchaseTransaction> list = purchaseTransactionService.listAll();
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
-
+    @Operation(summary = "Retrieve transaction and convert to target currency", method ="GET")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Transaction converted and retrieved successfully!"),
+            @ApiResponse(responseCode = "404", description = "Error in transaction conversion or retrieval"),
+    })
+    @RequestMapping(value = "/conversion", method = RequestMethod.GET)
     @GetMapping
-    @RequestMapping("/conversion")
     public ResponseEntity getConvertedCurrency(
             @RequestParam("targetCurrency") String currency,
             @RequestParam("purchaseId") Long purchaseId
