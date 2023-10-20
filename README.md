@@ -26,13 +26,6 @@ http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/save
 http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/conversion
 
 
-- Retrieve all transactions
-http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/getall
-
-
-- Retrieve transactions by id
-http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/get
-
 #### Docs
 
 Documentation created using swagger
