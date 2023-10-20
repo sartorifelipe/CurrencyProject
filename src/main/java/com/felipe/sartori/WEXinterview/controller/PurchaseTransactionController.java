@@ -49,40 +49,6 @@ public class PurchaseTransactionController {
         return new ResponseEntity<>("Description bigger then 50 Char.", HttpStatus.BAD_REQUEST);
     }
 
-    @Operation(summary = "Retrieve transactions by id", method ="GET")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Transaction retrieved successfully!"),
-            @ApiResponse(responseCode = "404", description = "Id not found"),
-    })
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    @GetMapping
-    public ResponseEntity getTransactionById(
-            @RequestParam("id") Long id
-    ) throws Exception {
-        try {
-            PurchaseTransaction response = purchaseTransactionService.getTransactionById(id);
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @Operation(summary = "Retrieve all transactions", method ="GET")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Transactions retrieved successfully!"),
-            @ApiResponse(responseCode = "404", description = "No transaction found"),
-    })
-    @RequestMapping(value = "/getall", method = RequestMethod.GET)
-    @GetMapping
-    public ResponseEntity getAll(
-    ) {
-        try {
-            List<PurchaseTransaction> list = purchaseTransactionService.listAll();
-            return new ResponseEntity<>(list, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
     @Operation(summary = "Retrieve transaction and convert to target currency", method ="GET")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Transaction converted and retrieved successfully!"),
