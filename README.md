@@ -18,11 +18,26 @@ Application deployed in Railway.
 RAILWAY_url
 
 #### EndPoints
- ADD ENDPOINTs
+- Receive and persist a transaction
+http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/save  
+
+
+- Retrieve a transaction and convert to target currency
+http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/conversion
+
+
+- Retrieve all transactions
+http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/getall
+
+
+- Retrieve transactions by id
+http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/get
 
 #### Docs
 
 Documentation created using swagger
+
+https://wexinterview.up.railway.app/api/wexinterview/swagger-ui/index.html
 
 http://localhost:8080/api/wexinterview/swagger-ui/index.html
 
