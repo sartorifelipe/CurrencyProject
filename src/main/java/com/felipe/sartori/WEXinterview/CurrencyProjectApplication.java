@@ -13,10 +13,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
                 description = "Backend application for persist and convert currency transactions"
         )
 )
-public class WexInterviewApplication {
+public class CurrencyProjectApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WexInterviewApplication.class, args);
+        SpringApplication.run(CurrencyProjectApplication.class, args);
     }
 
 
