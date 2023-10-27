@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.felipe.sartori</groupId>
-	<artifactId>WexInterview</artifactId>
+	<artifactId>CurrencyProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>WEXinterview</name>
 	<description>Demo project for WEX interview</description>
