@@ -1,4 +1,4 @@
-package com.felipe.sartori.WEXinterview.model;
+package com.felipe.sartori.CurrencyProject.model;
 
 import jakarta.persistence.*;
 import lombok.Builder;

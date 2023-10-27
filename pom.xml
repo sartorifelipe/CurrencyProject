@@ -11,7 +11,7 @@
 	<groupId>com.felipe.sartori</groupId>
 	<artifactId>CurrencyProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>WEXinterview</name>
+	<name>CurrencyProject</name>
 	<description>Demo project for WEX interview</description>
 	<properties>
 		<java.version>17</java.version>

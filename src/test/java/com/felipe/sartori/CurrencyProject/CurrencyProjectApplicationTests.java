@@ -1,4 +1,4 @@
-package com.felipe.sartori.WEXinterview;
+package com.felipe.sartori.CurrencyProject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,9 +1,9 @@
-package com.felipe.sartori.WEXinterview.controller;
+package com.felipe.sartori.CurrencyProject.controller;
 
-import com.felipe.sartori.WEXinterview.model.ConvertedCurrency;
-import com.felipe.sartori.WEXinterview.model.PurchaseTransaction;
-import com.felipe.sartori.WEXinterview.service.FiscalDataService;
-import com.felipe.sartori.WEXinterview.service.PurchaseTransactionServiceImpl;
+import com.felipe.sartori.CurrencyProject.model.ConvertedCurrency;
+import com.felipe.sartori.CurrencyProject.model.PurchaseTransaction;
+import com.felipe.sartori.CurrencyProject.service.FiscalDataService;
+import com.felipe.sartori.CurrencyProject.service.PurchaseTransactionServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -14,11 +14,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @RestController
 @RequestMapping("/v1/transactions")
-@Tag(name = "wex-interview")
+@Tag(name = "currency-project")
 public class PurchaseTransactionController {
 
     @Autowired

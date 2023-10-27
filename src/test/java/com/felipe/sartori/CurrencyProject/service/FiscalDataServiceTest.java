@@ -1,8 +1,8 @@
-package com.felipe.sartori.WEXinterview.service;
+package com.felipe.sartori.CurrencyProject.service;
 
-import com.felipe.sartori.WEXinterview.exceptions.CurrencyDataNotFoundException;
-import com.felipe.sartori.WEXinterview.model.Data;
-import com.felipe.sartori.WEXinterview.model.FiscalData;
+import com.felipe.sartori.CurrencyProject.exceptions.CurrencyDataNotFoundException;
+import com.felipe.sartori.CurrencyProject.model.Data;
+import com.felipe.sartori.CurrencyProject.model.FiscalData;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

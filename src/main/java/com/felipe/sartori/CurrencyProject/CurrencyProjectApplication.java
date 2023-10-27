@@ -1,4 +1,4 @@
-package com.felipe.sartori.WEXinterview;
+package com.felipe.sartori.CurrencyProject;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @OpenAPIDefinition(
         info = @Info(
-                title = "WEX Interview App",
+                title = "Currency project",
                 version = "1.0.0",
                 description = "Backend application for persist and convert currency transactions"
         )

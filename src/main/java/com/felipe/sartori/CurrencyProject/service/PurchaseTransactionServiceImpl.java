@@ -1,12 +1,12 @@
-package com.felipe.sartori.WEXinterview.service;
+package com.felipe.sartori.CurrencyProject.service;
 
 
-import com.felipe.sartori.WEXinterview.exceptions.CurrencyDataNotFoundException;
-import com.felipe.sartori.WEXinterview.exceptions.IdNotFoundException;
-import com.felipe.sartori.WEXinterview.model.ConvertedCurrency;
-import com.felipe.sartori.WEXinterview.model.Data;
-import com.felipe.sartori.WEXinterview.model.PurchaseTransaction;
-import com.felipe.sartori.WEXinterview.repository.PurchaseTransactionRepository;
+import com.felipe.sartori.CurrencyProject.exceptions.CurrencyDataNotFoundException;
+import com.felipe.sartori.CurrencyProject.exceptions.IdNotFoundException;
+import com.felipe.sartori.CurrencyProject.model.ConvertedCurrency;
+import com.felipe.sartori.CurrencyProject.model.Data;
+import com.felipe.sartori.CurrencyProject.model.PurchaseTransaction;
+import com.felipe.sartori.CurrencyProject.repository.PurchaseTransactionRepository;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
