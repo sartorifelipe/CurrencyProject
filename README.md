@@ -1,4 +1,4 @@
-# WEXInterview
+# CurrencyProject
 Backend application to persist a purchase transaction and retrieve the transaction in a specified country’s
 currency
 
@@ -19,20 +19,20 @@ RAILWAY_url
 
 #### EndPoints
 - Receive and persist a transaction
-http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/save  
+http://currencyproject.up.railway.app/api/wexinterview/v1/transactions/save  
 
 
 - Retrieve a transaction and convert to target currency
-http://wexinterview.up.railway.app/api/wexinterview/v1/transactions/conversion
+http://currencyproject.up.railway.app/api/wexinterview/v1/transactions/conversion
 
 
 #### Docs
 
 Documentation created using swagger
 
-https://wexinterview.up.railway.app/api/wexinterview/swagger-ui/index.html
+https://currencyproject.up.railway.app/api/wexinterview/swagger-ui/index.html
 
-http://localhost:8080/api/wexinterview/swagger-ui/index.html
+http://localhost:8080/api/currency/swagger-ui/index.html
 
 ## Builded with
 *  [Java 17](https://docs.oracle.com/en/java/javase/17/)
